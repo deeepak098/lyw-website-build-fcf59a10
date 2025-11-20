@@ -2,34 +2,10 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import ProductCard from "@/components/ProductCard";
 import heroImage from "@/assets/hero-image.jpg";
-import product1 from "@/assets/product-1.jpg";
-import product2 from "@/assets/product-2.jpg";
-import product3 from "@/assets/product-3.jpg";
+import { products } from "@/data/products";
 
 const Home = () => {
-  const featuredProducts = [
-    {
-      id: 1,
-      name: "Essential Cotton Tee",
-      description: "Premium organic cotton t-shirt in soft beige. Perfect for everyday comfort.",
-      price: 29,
-      image: product1,
-    },
-    {
-      id: 2,
-      name: "Urban Comfort Hoodie",
-      description: "Relaxed fit hoodie in charcoal grey. Soft, breathable, timeless.",
-      price: 69,
-      image: product2,
-    },
-    {
-      id: 3,
-      name: "Minimalist Jacket",
-      description: "Muted olive utility jacket. Versatile layering piece for any season.",
-      price: 119,
-      image: product3,
-    },
-  ];
+  const featuredProducts = products.slice(0, 3);
 
   return (
     <div className="min-h-screen">
