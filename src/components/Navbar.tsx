@@ -2,10 +2,12 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ShoppingBag } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { useCart } from "@/contexts/CartContext";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const { getCartCount } = useCart();
 
   const navItems = [
     { name: "Home", path: "/" },
@@ -43,6 +45,14 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
+            <Link to="/cart" className="relative">
+              <ShoppingBag className="h-5 w-5 text-foreground" />
+              {getCartCount() > 0 && (
+                <span className="absolute -top-2 -right-2 bg-primary text-primary-foreground text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
+                  {getCartCount()}
+                </span>
+              )}
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -76,6 +86,18 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
+            <Link
+              to="/cart"
+              onClick={() => setIsOpen(false)}
+              className="flex items-center justify-between px-4 py-2 text-sm font-medium rounded-md text-muted-foreground hover:bg-secondary hover:text-foreground transition-colors"
+            >
+              Cart
+              {getCartCount() > 0 && (
+                <span className="bg-primary text-primary-foreground text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
+                  {getCartCount()}
+                </span>
+              )}
+            </Link>
           </div>
         )}
       </div>

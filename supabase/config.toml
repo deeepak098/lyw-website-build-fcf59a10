@@ -1,0 +1,5 @@
+[project]
+ref = "<YOUR_PROJECT_ID>"
+
+[functions.chat]
+verify_jwt = false
