@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { Button } from '@/components/ui/button';
 import { useCart } from '@/contexts/CartContext';
 import { products } from '@/data/products';
 import { ShoppingCart, ArrowLeft } from 'lucide-react';
+import SEO from '@/components/SEO';
 
 const Product = () => {
   const { id } = useParams();
