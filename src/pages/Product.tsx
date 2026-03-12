@@ -37,6 +37,30 @@ const Product = () => {
 
   return (
     <div className="min-h-screen py-12">
+      <SEO
+        title={`${product.name} | LYW - Live Your Way`}
+        description={product.description}
+        canonical={`/product/${product.id}`}
+        type="product"
+      />
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Product",
+            name: product.name,
+            description: product.description,
+            image: product.image,
+            brand: { "@type": "Brand", name: "LYW" },
+            offers: {
+              "@type": "Offer",
+              price: product.price,
+              priceCurrency: "USD",
+              availability: "https://schema.org/InStock",
+            },
+          })}
+        </script>
+      </Helmet>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Link to="/shop" className="inline-flex items-center text-sm mb-8 hover:underline">
           <ArrowLeft className="w-4 h-4 mr-2" />
