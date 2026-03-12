@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Calendar } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const Blog = () => {
   const blogPost = {
@@ -13,6 +14,12 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO
+        title="LYW Blog | Style Tips & Fashion Inspiration"
+        description="Read style tips, wardrobe essentials guides, and fashion inspiration on the LYW blog. Discover timeless fashion advice."
+        canonical="/blog"
+        type="article"
+      />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Header */}
         <div className="text-center mb-12">

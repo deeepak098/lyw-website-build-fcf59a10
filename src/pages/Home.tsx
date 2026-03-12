@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import ProductCard from "@/components/ProductCard";
+import SEO from "@/components/SEO";
 import heroImage from "@/assets/hero-image.jpg";
 import { products } from "@/data/products";
 
@@ -9,6 +10,7 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO canonical="/" />
       {/* Hero Section */}
       <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
         <div

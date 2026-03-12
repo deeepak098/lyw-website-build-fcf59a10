@@ -1,6 +1,13 @@
+import SEO from "@/components/SEO";
+
 const About = () => {
   return (
     <div className="min-h-screen">
+      <SEO
+        title="About LYW | Our Story & Mission"
+        description="Learn about LYW's mission to provide premium everyday clothing. Quality, sustainability, and timeless design at our core."
+        canonical="/about"
+      />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Header */}
         <div className="text-center mb-16">
