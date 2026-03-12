@@ -45,6 +45,11 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Contact LYW | Get in Touch"
+        description="Have questions about LYW products? Contact our team via email or social media. We'd love to hear from you."
+        canonical="/contact"
+      />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Header */}
         <div className="text-center mb-12">
